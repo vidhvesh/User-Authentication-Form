@@ -257,9 +257,7 @@ form{
     }
 }
 
-/* Add these styles to your style.css file */
 
-/* Validation feedback styling */
 .validation-feedback {
     font-size: 12px;
     margin-top: 5px;
@@ -269,14 +267,14 @@ form{
   }
   
   .validation-feedback.valid {
-    color: #48c774; /* Green */
+    color: #48c774; 
   }
   
   .validation-feedback.invalid {
-    color: #ff4d4d; /* Red */
+    color: #ff4d4d; 
   }
   
-  /* Password strength meter */
+
   .password-strength-meter {
     height: 5px;
     background-color: #eee;
@@ -291,7 +289,7 @@ form{
     transition: width 0.3s ease, background-color 0.3s ease;
   }
   
-  /* Password requirements list */
+
   .password-requirements {
     list-style: none;
     padding: 0;
@@ -312,7 +310,7 @@ form{
     color: #ff4d4d;
   }
   
-  /* Fix for validation feedback positioning */
+
   .input-box {
     position: relative;
     margin: 30px 0;
@@ -321,7 +319,7 @@ form{
     align-items: flex-start;
   }
   
-  /* Add transition for icons */
+
   .input-box i {
     position: absolute;
     right: 20px;
