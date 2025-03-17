@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
+}
+.container{
+    position: relative;
+    width: 850px;
+    height: 550px;;
+    background: #fff;
+    box-shadow: 0 0px 30px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    margin:20px;
+    overflow: hidden;
+}
+
+.form-box{
+    position: absolute;
+    right:0;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    text-align: center;
+    padding :40px;
+    z-index: 1;
+    transition : 0.4s ease-in-out 1.2s, visibility 0s 1s;
+}
+
+.container.active .form-box{
+    right: 50%;
+}
+.form-box.register{
+    visibility: hidden;
+}
+
+.container.active .form-box.register{
+    visibility: visible;
+}
+form{
+    width: 100%;
+}
+.conatiner h1{
+    font-size:36px;
+    margin: -10px 0px;
+}
+
+.input-box{
+    position: relative;
+    margin : 30px 0;
+}
+.input-box input{
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: #eee;
+    border: none;
+    outline: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+.input-box input::placeholder{
+    font-weight: 400;
+    color: #888;
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    color: #888;
+    font-size: 20px;
+    transform: translateY(-50%);
+}
+
+.forgot-link{
+    margin: -15px 0 15px;
+}
+.forgot-link a{
+    color: #888;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.btn{
+    width: 100%;
+    height: 48px;
+    background: #7494ec;
+    border-radius: 8px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.container p{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a{
+    display: inline-flex;
+    padding: 10px;
+    border : 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.toggle-box {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.toggle-box::before{
+    content: '';
+    position: absolute;
+    left: -250%;
+    width: 300%;
+    height: 100%;
+    background: #7494ec;
+    border-radius: 150px;
+    z-index: 1;
+    transition: 1s ease-in-out;
+}
+
+.container.active .toggle-box::before{
+    left: 50%;
+}
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%; 
+    /* background: #2E8B57; */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    transition : 0.4s ease-in-out;
+}
+
+.toggle-panel.toggle-left{
+    left:0;
+    transition-delay:0.8s;
+}
+
+.container.active .toggle-panel.toggle-left{
+    left: -50%;
+    transition-delay:0.4s;
+}
+
+.toggle-panel.toggle-right{
+    right: -50%;
+    transition-delay:0.4s;
+}
+
+.container.active .toggle-panel.toggle-right{
+    right: 0;
+    transition-delay:0.8s;
+}
+
+
+.toggle-panel p{
+    margin-bottom: 20px;
+}
+
+.toggle-panel .btn{
+    width: 160px;
+    height: 48px;
+    background: transparent;
+    border: 2px solid #fff;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 650px){
+    .container{
+        height: calc(100vh - 40px);
+    }
+
+    .form-box{
+        bottom:0;
+        width: 100%;
+        height:70%;
+    }
+
+    .container.active .form-box{
+        right:0;
+        bottom: 30%;
+    }
+    .toggle-box::before{
+        left:0;
+        top:-270%;
+        width: 100%;
+        height: 300%;
+        border-radius: 20vw;
+    }
+
+    .container.active .toggle-box::before{
+        top:70%;
+        left:0;
+    }
+    .toggle-panel{
+       /* border:2px solid #333; */
+        width: 100%;
+        height: 50%;
+    }
+    .toggle-panel.toggle-left{
+        top:0;
+    }
+
+    .container.active .toggle-panel.toggle-left{
+        left:0;
+        top:-30%;
+    }
+    .toggle-panel.toggle-right{
+        right:0;
+        bottom:-30%;
+    }
+
+    .container.active .toggle-panel.toggle-right{
+        bottom:0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .form-box{
+        padding: 20px;
+    }
+    .toggle-panel h1{
+        font-size: 30px;
+    }
+}
+
+/* Add these styles to your style.css file */
+
+/* Validation feedback styling */
+.validation-feedback {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+  
+  .validation-feedback.valid {
+    color: #48c774; /* Green */
+  }
+  
+  .validation-feedback.invalid {
+    color: #ff4d4d; /* Red */
+  }
+  
+  /* Password strength meter */
+  .password-strength-meter {
+    height: 5px;
+    background-color: #eee;
+    border-radius: 3px;
+    margin: 5px 0;
+    overflow: hidden;
+  }
+  
+  .strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Password requirements list */
+  .password-requirements {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+    text-align: left;
+  }
+  
+  .password-requirements li {
+    margin: 2px 0;
+    font-size: 12px;
+  }
+  
+  .password-requirements li.valid {
+    color: #48c774;
+  }
+  
+  .password-requirements li.invalid {
+    color: #ff4d4d;
+  }
+  
+  /* Fix for validation feedback positioning */
+  .input-box {
+    position: relative;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Add transition for icons */
+  .input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    color: #888;
+    font-size: 20px;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
