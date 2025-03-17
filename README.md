@@ -13,7 +13,7 @@ A responsive **Login & Registration Form** with email validation, password stren
 
 ---
 ### 💡 Login & Registration Page  
-![Login Page](images and demo video/Screenshot-1.png)
+![Login Page](images-demo-video/Screenshot-1.png)
 
 ## 📂 Folder Structure  
 user-auth-form
